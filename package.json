@@ -1,0 +1,26 @@
+{
+  "name": "@bhaireshm/extract-languages",
+  "version": "1.0.0",
+  "description": "A Package and CLI tool to extract languages from files",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "prepublishOnly": "pnpm build && npm version patch"
+  },
+  "keywords": [
+    "extensions",
+    "files"
+  ],
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhaireshm/extract-languages.git"
+  },
+  "author": "Bhairesh M <bhaireshm@arithaconsulting.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+  }
+}
