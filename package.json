@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "A Package and CLI tool to extract languages from files",
   "main": "dist/index.js",
+  "bin": {
+    "el": "dist/cli.js",
+    "extract-languages": "dist/cli.js"
+  },
   "scripts": {
-    "build": "rm -rf dist && tsc",
-    "prepublishOnly": "pnpm build && npm version patch"
+    "build": "rm -rf dist && tsc --build",
+    "watch": "pnpm build && tsc -w",
+    "prepublishOnly": "pnpm build"
   },
   "keywords": [
     "extensions",
@@ -20,7 +25,11 @@
   },
   "author": "Bhairesh M <bhaireshm@arithaconsulting.com>",
   "license": "ISC",
+  "dependencies": {
+    "yargs": "^17.7.2"
+  },
   "devDependencies": {
     "@types/node": "^22.9.0",
+    "@types/yargs": "^17.0.33"
   }
 }
