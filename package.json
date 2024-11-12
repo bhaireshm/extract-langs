@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A Package and CLI tool to extract languages from files",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "bin": {
     "el": "dist/cli.js",
     "extract-languages": "dist/cli.js"
