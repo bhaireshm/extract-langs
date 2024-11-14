@@ -50,6 +50,10 @@ The function returns an object with two properties:
 - `languages`: A map of languages to counts of files of each language.
 - `totalFiles`: The total number of files.
 
+### Ignoring Files and Directories
+
+By default, the package will ignore files and directories specified in the `.gitignore` file in the directory being searched. You can also specify additional directories to ignore using the `-i` or `--ignore` option.
+
 Example:
 
 ```typescript
