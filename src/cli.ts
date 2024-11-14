@@ -5,10 +5,21 @@ import { join } from "node:path";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import { getLanguages, type Options } from ".";
+import pkg from "../package.json";
 
 yargs(hideBin(process.argv))
   .scriptName("el")
-  .alias("el", "extract-languages")
+  .version(pkg.version).alias('v', 'version')
+  .help("h").alias("h", "help")
+  .parserConfiguration({
+    "short-option-groups": true,
+    "camel-case-expansion": true,
+    "dot-notation": true,
+    "parse-numbers": true,
+    "boolean-negation": true,
+    "strip-dashed": true,
+  })
+  .wrap(process.stdout.columns > 125 ? 125 : process.stdout.columns)
   .usage("$0 [options] <path>")
   .command(
     "$0 <path>",
@@ -49,5 +60,4 @@ yargs(hideBin(process.argv))
     type: "string",
     describe: "Path to output file",
   })
-  .help()
   .parse();
